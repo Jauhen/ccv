@@ -1,0 +1,112 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CCV Input Plugin</title>
+ <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.js"></script>          
+ <script type="text/javascript" src="http://jquery-joshbush.googlecode.com/files/jquery.maskedinput-1.2.2.js"></script>
+ <script type="text/javascript" src="ccv.min-0.1.0.js"></script>
+<style type="text/css">
+body { font-family:Tahoma, Geneva, sans-serif;}
+
+form {
+	padding: 15px; border: 1px solid #060; color: #060; background: #EEE;
+}
+
+form input {
+	border: 1px solid #000;
+	width: 100px;
+}
+
+.text {
+	width: 250px; margin-bottom: 15px;
+}
+
+code { display: block;padding: 15px; border: 1px solid #006; color: #006; background: #EEE;}
+</style>
+</head><body>
+
+<h1>CCV Input Plugin</h1>
+<h2>Description</h2>
+<p>This is a CCV input plugin for the jQuery javascript library.</p>
+<p>It allow to input card number with masking and hidding first digits.</p>
+<p>Plugin supports next bank card numbers:</p>
+<ul>
+	<li>Master Card (mc)</li>
+	<li>Visa/Visa Electron (visa)</li>
+	<li>American Express (amax)</li>
+	<li>Diner's Club (dc)</li>
+	<li>China UnionPay (cup)</li>
+</ul>
+<h2>Download</h2>
+<p><a href="ccv-0.1.0.js">Uncompressed, version 0.1.0</a></p>
+<p><a href="ccv.min-0.1.0.js">Minified, version 0.1.0</a></p>
+<h2>Change Log</h2>
+<dl>
+	<dt>Version 0.1.0</dt>
+    <dd>Initial version.</dd>
+</dl>
+<h2>Examle of ussage</h2>
+<h3>Sample</h3>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#a").ccv($.ccv.mc);
+});
+ </script>
+<form method=get>
+<input id="a" type="text" name="a" value="5123123412341234" class="text"><br/>
+<input type="button" onclick="$('#a').newccv($.ccv.mc);" value="Master Card"> 
+<input type="button" onclick="$('#a').newccv($.ccv.visa);" value="Visa">  
+<input type="button" onclick="$('#a').newccv($.ccv.amex);" value="AMEX"><br/>
+<input type="button" onclick="$('#a').newccv($.ccv.dc);" value="Diner's Club"> 
+<input type="button" onclick="$('#a').newccv($.ccv.cup);" value="UnionPay"><br/><br/>
+<input type="submit">
+</form>
+
+<h3>Source code</h3>
+<code>
+&lt;script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.js"&gt;&lt;/script&gt;<br/>
+&lt;script type="text/javascript" src="http://jquery-joshbush.googlecode.com/files/jquery.maskedinput-1.2.2.js"&gt;&lt;/script&gt;<br/>
+&lt;script type="text/javascript" src="ccv.js"&gt;&lt;/script&gt;<br/>
+&lt;script type="text/javascript"><br/>
+<br/>
+&nbsp;$(document).ready(function(){<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$("#a").ccv($.ccv.cup);<br/>
+&nbsp;});<br/>
+<br/>
+&lt;/script><br/>
+&lt;form method=get><br/>
+&lt;input id="a" type="text" name="a" value="" class="text">&lt;br/><br/>
+&lt;input type="button" onclick="$('#a').newccv($.ccv.mc);" value="Master Card"><br/>
+&lt;input type="button" onclick="$('#a').newccv($.ccv.visa);" value="Visa"><br/>
+&lt;input type="button" onclick="$('#a').newccv($.ccv.amex);" value="AMEX"><br/>
+&lt;input type="button" onclick="$('#a').newccv($.ccv.dc);" value="Diner's Club"><br/>
+&lt;input type="button" onclick="$('#a').newccv($.ccv.cup);" value="UnionPay"><br/>
+&lt;input type=submit>
+&lt;/form>
+</code>
+<h2>Credits</h2>
+<p>Plugin has been created by <b>Yauhen Kutsuk</b> (<a href="mailto:jauhen@gmail.com">jauhen@gmail.com</a>)</p>
+<p>It needs <a href="http://digitalbush.com/projects/masked-input-plugin/" target="_blank">Masked Input Plugin</a> to run.</p>
+<p>Also some ideas from <a href="http://code.google.com/p/iphone-password/">iphone-password</a> have been used.</p>
+<h3>Licensed as MIT</h3>
+<p>Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:</p>
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.</p>
+
+</body>
+</html>
